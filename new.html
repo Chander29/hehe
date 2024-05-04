@@ -17,18 +17,20 @@
           const tracks = stream.getVideoTracks();
           if (tracks.length > 0 && tracks[0].label.includes('screen')) {
             console.log('Full-screen screen sharing permission granted');
-            window.location.href = 'page2/page2.html';
+            alert('Passed');
           } else {
             console.error('Full-screen screen sharing permission not granted');
+            alert('No full-screen sharing access is granted');
           }
         }).catch((err) => {
           console.error('Error requesting screen sharing permission:', err);
+          alert('No full-screen sharing access is granted');
         });
       } else {
         console.error('Screen sharing not supported');
+        alert('No full-screen sharing access is granted');
       }
     });
   </script>
 </body>
 </html>
-
